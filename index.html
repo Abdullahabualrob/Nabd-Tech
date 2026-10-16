@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nabd Tech - An AIoT-based real-time ECG monitoring research project.">
+  <title>Nabd Tech | Intelligent Heart Monitoring</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8fc;
+      color: #172b4d;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #071d35;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #50e3c2;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #50e3c2;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #071d35, #123f60);
+      color: white;
+      padding: 100px 8%;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid #50e3c2;
+      color: #50e3c2;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #50e3c2;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      color: #d4e2ef;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #50e3c2;
+      color: #071d35;
+      text-decoration: none;
+      padding: 13px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #0b3453;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 38px;
+      color: #607086;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      border: 1px solid #e3ebf3;
+      box-shadow: 0 5px 20px rgba(15, 43, 70, 0.05);
+    }
+
+    .card .icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      color: #0b5677;
+      margin-bottom: 10px;
+    }
+
+    .architecture {
+      background: #eaf2f8;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      text-align: center;
+    }
+
+    .step {
+      background: white;
+      padding: 24px 16px;
+      border-radius: 12px;
+    }
+
+    .number {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #0b5677;
+      color: white;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .goal {
+      background: #0b3453;
+      color: white;
+      text-align: center;
+    }
+
+    .goal h2 {
+      color: #50e3c2;
+      margin-bottom: 18px;
+    }
+
+    .goal p {
+      max-width: 800px;
+      margin: auto;
+      color: #e0eaf2;
+    }
+
+    .notice {
+      max-width: 850px;
+      margin: 30px auto 0;
+      padding: 18px;
+      border-radius: 10px;
+      background: #fff8e6;
+      color: #76591c;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    footer {
+      background: #071d35;
+      color: #c8d7e5;
+      padding: 25px 8%;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .hero {
+        padding: 70px 6%;
+      }
+
+      section {
+        padding: 50px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">♥ Nabd Tech</div>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#technology">Technology</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#goals">Research Goals</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="tag">AIoT • Healthcare • Artificial Intelligence</div>
+      <h1>Smarter Heart Monitoring with <span>Nabd Tech</span></h1>
+      <p>
+        Exploring intelligent, real-time ECG monitoring through
+        Artificial Intelligence and the Internet of Things,
+        with a focus on reliable and efficient cardiac signal analysis.
+      </p>
+      <a class="button" href="#technology">Explore Our Project</a>
+    </section>
+
+    <section>
+      <h2 class="section-title">About the Project</h2>
+      <p class="section-intro">
+        A student research project at the intersection of computer
+        engineering, artificial intelligence, and healthcare technology.
+      </p>
+      <div class="about">
+        <p>
+          Nabd Tech proposes an AIoT-based system for continuous
+          electrocardiogram (ECG) monitoring. The system aims to collect
+          ECG signals using a low-cost sensing device and analyze them
+          using deep learning techniques to investigate the identification
+          of cardiac rhythm patterns.
+        </p>
+        <br>
+        <p>
+          A key focus is comparing Edge AI, Cloud AI, and Hybrid AI
+          architectures to understand how the location of AI inference
+          affects prediction performance, response time, resource usage,
+          communication overhead, and reliability under changing network
+          conditions.
+        </p>
+      </div>
+    </section>
+
+    <section id="technology">
+      <h2 class="section-title">Core Technologies</h2>
+      <p class="section-intro">
+        Combining embedded systems, data analysis, and AI research
+        to investigate a practical approach to ECG monitoring.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">♥</div>
+          <h3>ECG Monitoring</h3>
+          <p>
+            Investigating continuous acquisition and processing
+            of single-lead ECG signals.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🧠</div>
+          <h3>Deep Learning</h3>
+          <p>
+            Evaluating deep learning models for ECG rhythm
+            pattern classification using research datasets.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">⚙️</div>
+          <h3>Embedded Systems</h3>
+          <p>
+            Exploring an ESP32-based sensing node and an edge
+            gateway for efficient data processing.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">☁️</div>
+          <h3>AIoT Architecture</h3>
+          <p>
+            Comparing edge, cloud, and hybrid processing
+            approaches for connected healthcare applications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="architecture" id="architecture">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-intro">
+        The proposed workflow for data collection, analysis,
+        and architecture evaluation.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="number">1</div>
+          <h3>Signal Collection</h3>
+          <p>Acquire ECG signals through a sensing device.</p>
+        </div>
+
+        <div class="step">
+          <div class="number">2</div>
+          <h3>Signal Processing</h3>
+          <p>Prepare and process ECG data for model analysis.</p>
+        </div>
+
+        <div class="step">
+          <div class="number">3</div>
+          <h3>AI Inference</h3>
+          <p>Evaluate edge, cloud, and hybrid AI approaches.</p>
+        </div>
+
+        <div class="step">
+          <div class="number">4</div>
+          <h3>Performance Evaluation</h3>
+          <p>Compare accuracy, latency, resource usage, and reliability.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="goal" id="goals">
+      <h2>Our Research Goals</h2>
+      <p>
+        The project aims to conduct a fair, patient-independent
+        evaluation of different AI deployment architectures using
+        consistent data splits and evaluation methods. The objective
+        is to understand the trade-offs between predictive quality,
+        real-time responsiveness, computational resources, and
+        resilience to network delays or packet loss.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Research and Innovation</h2>
+      <p class="section-intro">
+        Nabd Tech explores how intelligent computing and connected
+        devices may contribute to future cardiac monitoring research.
+        The project is intended for academic investigation and further
+        development.
+      </p>
+
+      <div class="notice">
+        <strong>Research Disclaimer:</strong>
+        Nabd Tech is a student research project and is not a certified
+        medical device. It is not intended to diagnose, treat, or replace
+        professional medical advice.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Nabd Tech | AIoT-Based ECG Monitoring Research Project</p>
+    <p>Student Research • Artificial Intelligence • Healthcare Technology</p>
+  </footer>
+
+</body>
+</html>
